@@ -5,12 +5,21 @@ mongoose.connect("mongodb://localhost:27017/learningMongo");
 
 const Article = mongoose.model("Article", articleModel);
 
-Article.find({'_id': "67e468eff300c33886edb8e2"}).then(articles => {
-    console.log(articles);
+//Deleting data
+Article.findByIdAndDelete("67e46851130595eb5e88604b").then(() => {
+    console.log("Dado removido!");
 }).catch(error => {
     console.log(error);
-});
+})
 
+//Data search
+// Article.find({'_id': "67e468eff300c33886edb8e2"}).then(articles => {
+//     console.log(articles);
+// }).catch(error => {
+//     console.log(error);
+// });
+
+//Data search
 // Article.find({}).then(articles => {
 //     console.log(articles);
 // }).catch(error => {
